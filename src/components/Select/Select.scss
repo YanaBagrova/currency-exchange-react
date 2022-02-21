@@ -1,3 +1,6 @@
+$height: 80px;
+$width: 140px;
+$border: 1px solid black;
 .select {
   display: block;
   margin: auto;
@@ -9,20 +12,20 @@
   font-size: 30px;
 }
 .show-sell {
-  border: 1px solid black;
-  width: 140px; 
-  height: 80px;
+  border: $border;
+  width: $width; 
+  height: $height;
   color: red;
 }
 .show-buy {
-  border: 1px solid black;
-  width: 140px; 
-  height: 80px;
+  border: $border;
+  width: $width; 
+  height: $height;
   color: green;
 }
 .show-chosen-currency-outer-div {
   margin-left: 42%; 
-  height: 80px; 
+  height: $height; 
   display: flex;
   justify-content: row;
   margin-top: 70px;
@@ -34,7 +37,7 @@
   font-size: 30px;
   text-align: left;
   text-indent: 20px;
-  border-bottom: 1px solid black;
+  border-bottom: $border;
   padding-bottom: 12px;
 }
 .ok-button {
