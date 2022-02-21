@@ -1,0 +1,52 @@
+.select {
+  // margin-left: 100px;
+  display: block;
+  margin: auto;
+  margin-top: 60px;
+  height: 50px;
+  width: 200px;
+  vertical-align: middle;
+  text-align: center;
+  font-size: 30px;
+}
+.show-sell {
+  border: 1px solid black;
+  width: 140px; 
+  height: 80px;
+  color: red;
+}
+.show-buy {
+  border: 1px solid black;
+  width: 140px; 
+  height: 80px;
+  color: green;
+}
+.show-parent {
+  margin-left: 42%; 
+  height: 80px; 
+  display: flex;
+  justify-content: row;
+  margin-top: 70px;
+  font-size: 35px;
+  text-align: center;
+}
+.title {
+  margin-top: 18px;
+  font-size: 30px;
+  text-align: left;
+  text-indent: 20px;
+  // text-decoration: underline;
+  border-bottom: 1px solid black;
+  padding-bottom: 12px;
+}
+.ok-button {
+  display: block;
+  margin-left: 100px;
+  margin-top: 20px;
+  height: 40px;
+  width: 95px;
+  color: white;
+  background: blue;
+  font-size: 17px;
+  border-radius: 5px;
+}
