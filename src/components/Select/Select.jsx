@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { v4 as uuidv4 } from 'uuid';
 import Modal from '../Modal/Modal';
 import './Select.scss'
 
@@ -48,8 +47,6 @@ function Select(props) {
   function selectHandler(event) {
     let chosen = event.target.options[event.target.selectedIndex].value
     setChosenCurrency(chosen)
-    setSell(ratesFullInfo.find((el) => el.currency === chosen && el.kind === 'SELL').rate)
-    setBuy(ratesFullInfo.find((el) => el.currency === chosen && el.kind === 'BUY').rate)
   }
 
   function openModal(type) {
@@ -67,7 +64,7 @@ function Select(props) {
         <select onChange={selectHandler} name="" id="" className="select">
           {ratesFullInfo
             .filter((el) => el.kind === "SELL")
-            .map((el) => <option key={uuidv4()} value={el.currency}>{el.currency}</option>)}
+            .map((el) => <option value={el.currency}>{el.currency}</option>)}
         </select>
       </div>
       <div className="show-chosen-currency-outer-div">
