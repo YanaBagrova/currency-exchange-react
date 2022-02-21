@@ -1,5 +1,4 @@
 .clock {
-  // border: 1px solid black;
   width: 400px;
   font-size: 50px;
   margin-top: 50px;
@@ -7,7 +6,7 @@
   text-align: center;
   vertical-align: middle;
 }
-.parent {
+.clock-outer-block {
   display: table;
   line-height: 90px;
   display: block;

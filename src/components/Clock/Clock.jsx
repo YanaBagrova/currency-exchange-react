@@ -16,7 +16,7 @@ function Home(props) {
   }, [])
 
   return (
-    <div className="parent">
+    <div className="clock-outer-block">
       <div className="clock" id="clock">{time}</div>
     </div>
   );

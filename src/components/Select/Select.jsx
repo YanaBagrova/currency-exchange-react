@@ -6,13 +6,10 @@ import './Select.scss'
 
 
 function Select(props) {
-  const [rates, setRates] = useState([])
   const [modal, setModal] = useState(false)
   const [isSellSelectedForModal, setIsSellSelectedForModal] = useState(true)
   const [chosenCurrency, setChosenCurrency] = useState('')
-  const [options, setOptions] = useState('')
   const [ratesFullInfo, setRatesFullInfo] = useState([])
-  const [chosenRateSell, setChosenRateSell] = useState('')
   const [sell, setSell] = useState('')
   const [buy, setBuy] = useState('')
   const [modalRate, setModalRate] = useState('')
@@ -74,7 +71,7 @@ function Select(props) {
             .map((el) => <option key={uuidv4()} value={el.currency}>{el.currency}</option>)}
         </select>
       </div>
-      <div className="show-parent">
+      <div className="show-chosen-currency-outer-div">
         {sell && <div onClick={() => openModal('SELL')} className="show-sell">SELL {sell}</div>}
         {buy && <div onClick={() => openModal('BUY')} className="show-buy">BUY {buy}</div>}
         {modal && <Modal
