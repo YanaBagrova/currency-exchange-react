@@ -2,10 +2,6 @@ import { requestsAT } from '../actionTypes/requestsAT';
 
 const requestsState = {
   requests: [],
-  chooseCur: '',
-  chooseType: '',
-  modal: '',
-  price: '',
 }
 
 export const requestsReducer = (state = requestsState, action) => {
