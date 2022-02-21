@@ -1,17 +1,15 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import Home from "../Home/Home";
+import Clock from "../Clock/Clock";
 import Select from '../Select/Select'
 import Orders from '../Orders/Orders'
-// import { store } from './redux/store';
-// import './App.css';
 
 function App() {
   return (
     <BrowserRouter>
       <Switch>
         <Route exact path="/">
-          <Home />
+          <Clock />
           <Select />
         </Route>
         <Route exact path="/requests">
