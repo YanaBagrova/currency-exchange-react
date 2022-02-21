@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import Ord from '../Ord/Ord';
+import Order from '../Order/Order';
 import './Orders.scss'
 
 function Orders(props) {
@@ -18,7 +18,7 @@ function Orders(props) {
         <div>Volume</div>
         <div>Timestamp</div>
       </div>
-      {orders ? orders.map((order) => <Ord order={order} key={uuidv4()} />) : <p>no orders</p>}
+      {orders ? orders.map((order) => <Order order={order} key={uuidv4()} />) : <p>no orders</p>}
     </div>
       {/* <button onClick={() => localStorage.clear()}>Clear</button> */}
     </>

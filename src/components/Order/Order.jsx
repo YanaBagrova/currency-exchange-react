@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Ord = React.memo(function Ord({order}) {
+const Order = React.memo(function Order({order}) {
 
   const { chosenCurrency } = order
   const { rate } = order
@@ -20,4 +20,4 @@ const Ord = React.memo(function Ord({order}) {
   );
 })
 
-export default Ord;
+export default Order;

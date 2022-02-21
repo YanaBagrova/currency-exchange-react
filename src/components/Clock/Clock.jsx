@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './Clock.scss'
 
-function Home(props) {
+function Clock(props) {
 
   const [time, setTime] = useState((new Date()).toLocaleTimeString())
   
@@ -22,4 +22,4 @@ function Home(props) {
   );
 }
 
-export default Home;
+export default Clock;
