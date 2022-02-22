@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import Modal from '../Modal/Modal';
 import './Select.scss'
 
@@ -65,7 +66,7 @@ function Select(props) {
         <select value={value} onChange={selectHandler} name="" id="" className="select">
           {ratesFullInfo
             .filter((el) => el.kind === "SELL")
-            .map((el) => <option value={el.currency}>{el.currency}</option>)}
+            .map((el) => <option key={uuidv4()} value={el.currency}>{el.currency}</option>)}
         </select>
       </div>
       <div className="show-chosen-currency-outer-div">
