@@ -4,6 +4,8 @@ import './Select.scss'
 
 
 function Select(props) {
+  const allCurrenciesArr = ['USD/EUR', 'USD/RUB', 'USD/CAD']
+  const [value, setValue] = useState('')
   const [modal, setModal] = useState(false)
   const [isSellSelectedForModal, setIsSellSelectedForModal] = useState(true)
   const [chosenCurrency, setChosenCurrency] = useState('')
@@ -32,19 +34,18 @@ function Select(props) {
       let rate = (Math.random() * 10).toFixed(4)
       result.push(rate)
     }
-    const ratesFullInfo = [
-      { kind: "SELL", currency: "USD/EUR", rate: result[0] },
-      { kind: "BUY", currency: "USD/EUR", rate: result[1] },
-      { kind: "SELL", currency: "USD/RUB", rate: result[2] },
-      { kind: "BUY", currency: "USD/RUB", rate: result[3] },
-      { kind: "SELL", currency: "USD/CAD", rate: result[4] },
-      { kind: "BUY", currency: "USD/CAD", rate: result[5] },
-    ]
-    console.log(ratesFullInfo)
+    const ratesFullInfo = []
+    for (let i = 0; i < allCurrenciesArr.length; i++) {
+        let sell = { kind: "SELL", currency: allCurrenciesArr[i], rate: result[i * 2] }
+        let buy = { kind: "BUY", currency: allCurrenciesArr[i], rate: result[i * 2 + 1] }
+        ratesFullInfo.push(sell)
+        ratesFullInfo.push(buy)
+    }
     setRatesFullInfo(ratesFullInfo)
   }
 
   function selectHandler(event) {
+    setValue(event.target.value);
     let chosen = event.target.options[event.target.selectedIndex].value
     setChosenCurrency(chosen)
   }
@@ -61,7 +62,7 @@ function Select(props) {
   return (
     <>
       <div>
-        <select onChange={selectHandler} name="" id="" className="select">
+        <select value={value} onChange={selectHandler} name="" id="" className="select">
           {ratesFullInfo
             .filter((el) => el.kind === "SELL")
             .map((el) => <option value={el.currency}>{el.currency}</option>)}
